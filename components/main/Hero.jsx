@@ -4,7 +4,7 @@ import Navbar from "@/components/main/Navbar";
 import StarsCanvas from "@/components/main/StarBackground";
 const Hero = () => {
   return (
-    <div className="relative flex flex-col h-full w-full" id="about-me">
+    <div className="relative flex flex-col justify-center h-full w-full" id="about-me">
         <Navbar/>
         <StarsCanvas /> 
       <video
@@ -16,6 +16,8 @@ const Hero = () => {
         <source src="/blackhole.webm" type="video/webm" />
       </video>
       <HeroContent />
+
+    
     </div>
   );
 };

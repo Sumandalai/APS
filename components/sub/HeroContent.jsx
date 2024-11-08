@@ -42,7 +42,7 @@ const HeroContent = () => {
                 <motion.a
                     variants={slideInFromLeft(2,2)}
                     onClick={handleRegisterClick}
-                    className="py-2 px-[4rem] -ml-6 flex items-center justify-center text-center text-white text-2xl cursor-pointer rounded-lg  h-16
+                    className="py-2 px-[4rem] -ml-6 flex items-center mt-75 justify-center text-center text-white text-2xl cursor-pointer rounded-lg  h-16
                bg-[#0a0a1a] hover:bg-purple-800 shadow-lg shadow-indigo-900/30
                border border-transparent hover:border-purple-400 transition duration-300 ease-in-out transform hover:scale-105"
                 >
@@ -64,6 +64,7 @@ const HeroContent = () => {
                 />
             </motion.div>
         </motion.div>
+        
     );
 };
 

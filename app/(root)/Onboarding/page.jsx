@@ -20,12 +20,12 @@ const Onboarding = () => {
     return (
             <div className="flex flex-row items-center bg-black">
               <StarsCanvas/>
-                <div className="w-[85%] h-screen flex items-center justify-center ">
+                <div className="w-[80%] h-screen flex items-center justify-center ">
                     <div className="h-[594px] w-[945px]">
                        <MazeGrid />
                     </div>
                 </div>
-                <div className="bg-black w-[15%] h-screen">
+                <div className="bg-black w-[20%] h-screen">
                     <Sidebar/>
                 </div>
                 <GameOverModal />

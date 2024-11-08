@@ -22,6 +22,13 @@ module.exports = {
         floating: 'floating 3s ease-in-out infinite', // Add floating animation
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        pulse: 'pulse 2s infinite ease-in-out',
+        rotate: 'rotate 4s linear infinite',
+        bounce: 'bounce 1.5s infinite ease-in-out',
+      },boxShadow: {
+        easyGlow: '0 0 15px 5px rgba(0, 255, 0, 0.6)',      // green glow for easy
+        mediumGlow: '0 0 15px 5px rgba(255, 165, 0, 0.6)',  // orange glow for medium
+        hardGlow: '0 0 15px 5px rgba(255, 0, 0, 0.6)',       // red glow for hard
       },
       // Extend keyframes for animations
       keyframes: {

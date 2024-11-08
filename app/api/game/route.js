@@ -35,3 +35,41 @@ export async function POST(request) {
     return NextResponse.json({ error: "Database error" }, { status: 500 });
   }
 }
+
+export async function GET() {
+  try {
+    const user = await currentUser();
+
+    if (!user || !user.email) {
+      return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
+    }
+
+    const topUsers = await db.user.findMany({
+      where: {
+        email: { not: user.email }, // Exclude the current user
+      },
+      orderBy: [
+        { points: 'desc' },
+        { timeTaken: 'asc' }
+      ],
+      take: 3, // Limit to the top 3 users
+      select: {
+        id: true,
+        name: true,
+        points: true,
+        timeTaken: true,
+      },
+    });
+
+    return NextResponse.json(
+      {
+        success: true,
+        topUsers,
+      },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("Error fetching top users:", error);
+    return NextResponse.json({ error: "Database error" }, { status: 500 });
+  }
+}

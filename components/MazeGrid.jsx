@@ -298,7 +298,7 @@ const MazeGrid = () => {
             classNames = 'bg-black'; // Path cell
           } else if ((cell === 2 || cell === 3 || cell === 4) && isInRange(rowIndex, colIndex)) {
             // Show question image if within range
-            classNames = 'relative flex items-center justify-center';
+            classNames = 'relative flex items-center justify-center animate-spin-slow';
             backgroundImage = `url(${
               cell === 2 ? easyQuestionImage : cell === 3 ? mediumQuestionImage : hardQuestionImage
             })`;
@@ -306,9 +306,9 @@ const MazeGrid = () => {
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundImage: backgroundImage,
-              width: '150%',
-              height: '150%',
-              margin: '-6px',
+              width: '220%',
+              height: '220%',
+              margin: '-14px',
             };
           } else if (cell === 5) {
             // Destination cell (exit)
