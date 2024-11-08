@@ -19,7 +19,7 @@ const Navbar = () => {
           />
 
           <span className="font-bold ml-[3px] hidden md:block text-gray-300">
-            Algorithmic Programming Society
+            Algorithmic and Programming Society
           </span>
         </a>
         <a
@@ -34,8 +34,8 @@ const Navbar = () => {
             className="cursor-pointer hover:animate-slowspin"
           />
 
-          <span className="font-bold ml-[3px] hidden md:block text-gray-300">
-            INNOVISON
+          <span className="font-bold -ml-[3px] hidden md:block text-gray-300">
+            Innovision
           </span>
         </a>
       </div>

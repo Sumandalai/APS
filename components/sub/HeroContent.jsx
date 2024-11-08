@@ -17,7 +17,7 @@ const HeroContent = () => {
             animate="visible"
             className="flex flex-row items-center   mt-2 w-full m-auto z-[20]"
         >
-            <div className="h-full w-full flex flex-col justify-center m-auto text-start pl-[86px] ">
+            <div className="h-full w-[60%] flex flex-col justify-center align-middle items-center m-auto text-start  ">
 
                 <motion.div
                     variants={slideInFromLeft(0.5)}
@@ -40,9 +40,9 @@ const HeroContent = () => {
 
              
                 <motion.a
-                    variants={slideInFromLeft(1)}
+                    variants={slideInFromLeft(2,2)}
                     onClick={handleRegisterClick}
-                    className="py-2 px-4 flex items-center justify-center text-center text-white text-2xl cursor-pointer rounded-lg max-w-[200px] h-16
+                    className="py-2 px-[4rem] -ml-6 flex items-center justify-center text-center text-white text-2xl cursor-pointer rounded-lg  h-16
                bg-[#0a0a1a] hover:bg-purple-800 shadow-lg shadow-indigo-900/30
                border border-transparent hover:border-purple-400 transition duration-300 ease-in-out transform hover:scale-105"
                 >
@@ -54,13 +54,13 @@ const HeroContent = () => {
 
             <motion.div
                 variants={slideInFromRight(0.8)}
-                className="w-full h-full  m-auto animate-floating ml-6  "
+                className="w-[40%] h-full  m-auto animate-floating ml-6  "
             >
                 <Image
                     src="/astronut.png"
                     alt="work icons"
-                    height={650}
-                    width={650}
+                    height={450}
+                    width={450}
                 />
             </motion.div>
         </motion.div>

@@ -47,7 +47,7 @@ export const GameProvider = ({ children }) => {
   const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
   const [gameStarted, setGameStarted] = useState(null);
   const [diff,setdiff]=useState(0);
-  const [iscorrect,setiscorrct]=useState();
+  const [showBackButton, setShowBackButton] = useState(false);
   
   const correctSound = typeof window !== "undefined" ? new Audio('/sounds/correct.mp3') : null;
   const wrongSound = typeof window !== "undefined" ? new Audio('/sounds/wrong.mp3') : null;
@@ -195,7 +195,9 @@ export const GameProvider = ({ children }) => {
     currentQuestion,         
     handleAnswerSubmission,  
     numRows,
-    numCols
+    numCols ,
+    showBackButton ,
+    setShowBackButton
   };
 
   return (

@@ -10,13 +10,18 @@ import { MdExitToApp } from "react-icons/md";
 
 
 const Sidebar = () => {
-  const { lifelines, score, timeLeft ,setIsGameOver } = useContext(GameContext);
+  const { lifelines, score, timeLeft ,setIsGameOver ,setShowBackButton } = useContext(GameContext);
   
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
   };
+
+  const end=()=>{
+    setShowBackButton(true);
+    setIsGameOver(true);
+  }
 
   return (
     <div className="text-white font-bold pt-6 flex flex-col justify-between h-full relative">
@@ -50,7 +55,7 @@ const Sidebar = () => {
 
       <div className="w-full flex justify-start z-30 mb-8 text-xl">
         <button
-          onClick={() => setIsGameOver(true)}
+          onClick={end}
           variant="secondary"
           className="w-[80%] py-2 text-white font-semibold bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg shadow-xl transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl hover:from-purple-600 hover:to-pink-600 flex items-center justify-center space-x-2"
         >

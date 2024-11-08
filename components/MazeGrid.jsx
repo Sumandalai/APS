@@ -194,6 +194,21 @@ const MazeGrid = () => {
       mazeRef.current.focus();
     }
   }, [isQuestionModalOpen]);
+// Refocus on the maze when clicking anywhere on the screen
+  useEffect(() => {
+    const handleClick = () => {
+      if (mazeRef.current) {
+        mazeRef.current.focus();
+      }
+    };
+
+    document.addEventListener('click', handleClick);
+
+  
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, []);
 
   const isValidMove = (row, col) => {
     if (row < 0 || col < 0 || row >= numRows || col >= numCols) {
@@ -207,24 +222,28 @@ const MazeGrid = () => {
     const { row, col } = ratPosition;
     let newRow = row;
     let newCol = col;
-
+  
     switch (event.key) {
       case 'ArrowUp':
+      case 'w': 
         newRow = row - 1;
         break;
       case 'ArrowDown':
+      case 's': 
         newRow = row + 1;
         break;
       case 'ArrowLeft':
+      case 'a': 
         newCol = col - 1;
         break;
       case 'ArrowRight':
+      case 'd': 
         newCol = col + 1;
         break;
       default:
         return;
     }
-
+  
     if (isValidMove(newRow, newCol)) {
       handleMove(newRow, newCol);
       const cellType = mazeLayout[newRow][newCol];
@@ -233,6 +252,7 @@ const MazeGrid = () => {
       }
     }
   };
+  
 
   const isInRange = (row, col) => {
     const rowDistance = Math.abs(row - ratPosition.row);
