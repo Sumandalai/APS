@@ -27,7 +27,7 @@ export const Instructions = () => {
         
         <p><strong className="text-cyan-300">Game Rules:</strong></p>
         <p>1. You have a total of <strong className="text-pink-300">10 minutes</strong> to complete the maze.</p>
-        <p>2. You start with <strong className="text-pink-300">2 lifelines</strong>. Each wrong answer reduces one lifeline. Game over if all lifelines are lost before reaching the destination.</p>
+        <p>2. You start with <strong className="text-pink-300">3 lifelines</strong>. Each wrong answer reduces one lifeline. Game over if all lifelines are lost before reaching the destination.</p>
         
         <p><strong className="text-cyan-300">Goal:</strong> Complete the maze in the shortest time, maximize your score, and make it to the end without running out of lifelines!</p>
       </div>

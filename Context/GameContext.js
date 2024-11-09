@@ -38,7 +38,7 @@ export const GameProvider = ({ children }) => {
   const numRows = mazeLayout.length;          
   const numCols = mazeLayout[0].length; 
   const [ratPosition, setRatPosition] = useState({ row: 5, col: 0 });
-  const [lifelines, setLifelines] = useState(2);
+  const [lifelines, setLifelines] = useState(3);
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(600); // 10 minutes
   const [isGameOver, setIsGameOver] = useState(false);
