@@ -40,7 +40,7 @@ const Sidebar = () => {
   // }, []);
 
   return (
-    <div className="text-white font-bold pt-6 flex flex-col  h-full">
+    <div className="text-white font-bold pt-6 flex flex-col justify-between  h-full">
 
       <div className="flex flex-col items-center mb-8">
         <div className="mb-4 text-xl flex items-center">
@@ -86,7 +86,7 @@ const Sidebar = () => {
   </ul>
 </div> */}
 
-<div className="mb-8 space-y-3 flex-1 w-[90%] self-center">
+<div className="mb-8 space-y-3 w-[90%] self-center">
   {[
     { image: easyQuestionImage, label: 'Easy', points: '+10' },
     { image: mediumQuestionImage, label: 'Medium', points: '+20' },
