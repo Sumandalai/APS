@@ -223,7 +223,7 @@ easy: [
   {
   id: 60,
   heading: "Maximum Galactic Runs",
-  question: "In an intergalactic cricket match, assuming there are no extras (like wides or 'no' balls) and no overthrows, what is the maximum number of runs a space cricketer can score in an ideal scenario? Note: Here, we assume a practical scenario where the batsman cannot run more than 3 runs per ball. Otherwise, theoretically, there would be no limit if the opposing team did not retrieve the ball.",
+  question: "In an intergalactic 50 over cricket match, assuming there are no extras (like wides or 'no' balls) and no overthrows, what is the maximum number of runs a space cricketer can score in an ideal scenario? Note: Here, we assume a practical scenario where the batsman cannot run more than 3 runs per ball. Otherwise, theoretically, there would be no limit if the opposing team did not retrieve the ball.",
   options: ["1653 runs", "1600 runs", "1500 runs", "1700 runs"],
   correctAnswer: "1653 runs"
   },

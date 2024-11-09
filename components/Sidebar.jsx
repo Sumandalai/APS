@@ -13,9 +13,9 @@ const Sidebar = () => {
     const secs = seconds % 60;
     return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
   };
+  
 
   const end = () => {
-    console.log("hello");
     setShowBackButton(true);
     setIsGameOver(true);
   };
@@ -24,7 +24,6 @@ const Sidebar = () => {
   const mediumQuestionImage = '/Images/medium.png';
   const hardQuestionImage = '/Images/hard.png';
   const goalImage = '/Images/trophy.png';
-
   // useEffect(() => {
   //   const fetchLeaderboard = async () => {
   //     try {
@@ -86,16 +85,16 @@ const Sidebar = () => {
   </ul>
 </div> */}
 
-<div className="mb-8 space-y-3 w-[90%] self-center">
+<div className="mb-8 -m-1 space-y-3 w-[90%] self-center">
   {[
     { image: easyQuestionImage, label: 'Easy', points: '+10' },
     { image: mediumQuestionImage, label: 'Medium', points: '+20' },
     { image: hardQuestionImage, label: 'Hard', points: '+30' },
-    { image: goalImage, label: 'Goal', points: '+90' }
+    { image: goalImage, label: 'Goal', points: '+90' },
   ].map((category, index) => (
     <div
       key={index}
-      className="relative flex items-center justify-between p-3 rounded-lg bg-gradient-to-br from-gray-800 to-gray-900 shadow-lg transition-transform transform hover:scale-105"
+      className="relative flex items-center justify-between p-2 rounded-lg bg-gradient-to-br from-gray-800 to-gray-900 shadow-lg transition-transform transform hover:scale-105"
       style={{
         boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.3)",
         border: "1px solid rgba(255, 255, 255, 0.2)"
@@ -112,7 +111,7 @@ const Sidebar = () => {
       <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-400">
         {category.label}
       </span>
-      <span className="text-sm font-semibold text-gray-300">
+      <span className="text-sm w-20 font-semibold text-gray-300">
         {category.points} pts
       </span>
     </div>
@@ -123,7 +122,7 @@ const Sidebar = () => {
 
 
       {/* End Game Button */}
-      <div className="w-full flex justify-center z-30 mb-8 text-xl">
+      <div className="w-full -m-1 flex justify-center z-30 mb-8 text-xl">
         <button
           onClick={end}
           variant="secondary"

@@ -9,7 +9,7 @@ import { questions } from '@/data/questions';
 export const GameProvider = ({ children }) => {
   let mazeMatrix = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // Row 1 (all walls)
-    [1, 2, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], // Row 2
+    [1, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], // Row 2
     [1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 3, 1, 0, 1, 4, 1], // Row 3
     [1, 0, 1, 0, 2, 0, 0, 0, 1, 0, 1, 2, 0, 0, 0, 0, 1, 0, 1, 0, 0, 4, 0, 0, 1, 0, 2, 0, 1, 0, 1, 0, 1, 0, 1], // Row 4
     [1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 3, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1], // Row 5
@@ -38,7 +38,7 @@ export const GameProvider = ({ children }) => {
   const numRows = mazeLayout.length;          
   const numCols = mazeLayout[0].length; 
   const [ratPosition, setRatPosition] = useState({ row: 5, col: 0 });
-  const [lifelines, setLifelines] = useState(3);
+  const [lifelines, setLifelines] = useState(2);
   const [score, setScore] = useState(0);
   const [timeLeft, setTimeLeft] = useState(600); // 10 minutes
   const [isGameOver, setIsGameOver] = useState(false);
@@ -52,6 +52,8 @@ export const GameProvider = ({ children }) => {
   const correctSound = typeof window !== "undefined" ? new Audio('/sounds/correct.mp3') : null;
   const wrongSound = typeof window !== "undefined" ? new Audio('/sounds/wrong.mp3') : null;
   const beepAudio = typeof window !== 'undefined' ? new Audio('/sounds/beep.mp3') : null;
+
+
   const endGame = async (timeTaken) => {
     if (!gameStarted) return; 
     
